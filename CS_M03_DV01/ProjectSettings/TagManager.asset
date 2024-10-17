@@ -48,3 +48,6 @@ TagManager:
   - name: UI
     uniqueID: 2996255145
     locked: 0
+  - name: Pickup
+    uniqueID: 3565716951
+    locked: 0

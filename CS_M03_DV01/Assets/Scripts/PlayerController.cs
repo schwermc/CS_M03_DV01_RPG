@@ -44,10 +44,10 @@ public class PlayerController : MonoBehaviourPun
         float mouseX = (Screen.width / 2) - Input.mousePosition.x;
 
         if (mouseX < 0)
-            weaponAnim.transform.parent.localScale = new Vector3(-1, 1, 1);
+            weaponAnim.transform.parent.localScale = new Vector3(1, 1, 1);
 
         else
-            weaponAnim.transform.parent.localScale = new Vector3(1, 1, 1);
+            weaponAnim.transform.parent.localScale = new Vector3(-1, 1, 1);
     }
 
     void Move()
@@ -127,6 +127,7 @@ public class PlayerController : MonoBehaviourPun
     {
         id = player.ActorNumber;
         photonPlayer = player;
+        Debug.Log("Here");
         GameManager.instance.players[id - 1] = this;
 
         // initialize the health bar
@@ -151,6 +152,8 @@ public class PlayerController : MonoBehaviourPun
     void GiveGold(int goldToGive)
     {
         gold += goldToGive;
+
         // update the ui
+        GameUI.instance.UpdateGoldText(gold);
     }
 }

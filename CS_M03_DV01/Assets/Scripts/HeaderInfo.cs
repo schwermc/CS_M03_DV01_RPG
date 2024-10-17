@@ -3,7 +3,7 @@ using UnityEngine.UI;
 using TMPro;
 using Photon.Pun;
 
-public class HeaderInfo : MonoBehaviour
+public class HeaderInfo : MonoBehaviourPun
 {
     public TextMeshProUGUI nameText;
     public Image bar;
