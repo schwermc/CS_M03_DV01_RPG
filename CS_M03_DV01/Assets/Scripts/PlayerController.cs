@@ -86,6 +86,8 @@ public class PlayerController : MonoBehaviourPun
     public void TakeDamage(int damage)
     {
         curHp -= damage;
+        Debug.Log("Player take damage");
+
         // update the health bar
         headerInfo.photonView.RPC("UpdateHealthBar", RpcTarget.All, curHp);
 
@@ -130,7 +132,6 @@ public class PlayerController : MonoBehaviourPun
     {
         id = player.ActorNumber;
         photonPlayer = player;
-        Debug.Log("Here");
         GameManager.instance.players[id - 1] = this;
 
         // initialize the health bar
